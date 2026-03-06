@@ -182,17 +182,21 @@
     </a>
 
     <!-- Módulos futuros -->
-    <a href="#" class="nav-link">
-        <i class="bi bi-journal-bookmark-fill"></i> Cursos
-    </a>
-    <a href="#" class="nav-link">
-        <i class="bi bi-clipboard2-check-fill"></i> Calificaciones
-    </a>
-
-    <div class="nav-section">Sistema</div>
-    <a href="#" class="nav-link">
-        <i class="bi bi-gear-fill"></i> Configuración
-    </a>
+   <a href="{% url 'curso_list' %}" class="nav-link">
+    <i class="bi bi-journal-bookmark-fill"></i> Cursos
+</a>
+<a href="{% url 'catedratico_list' %}" class="nav-link">
+    <i class="bi bi-person-badge-fill"></i> Catedráticos
+</a>
+<a href="{% url 'asignacion_list' %}" class="nav-link">
+    <i class="bi bi-calendar2-check-fill"></i> Asignaciones
+</a>
+<a href="{% url 'inscripcion_list' %}" class="nav-link">
+    <i class="bi bi-pencil-square"></i> Inscripciones
+</a>
+<a href="{% url 'notas_list' %}" class="nav-link">
+    <i class="bi bi-clipboard2-check-fill"></i> Notas
+</a>
 
     <div class="sidebar-footer">
         JP University &copy; {% now "Y" %}
