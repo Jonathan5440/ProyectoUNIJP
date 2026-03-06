@@ -1,0 +1,1 @@
+default_app_config = 'universidad.Models.Catedratico.apps.CatedraticoConfig'
