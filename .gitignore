@@ -1,0 +1,19 @@
+# Entorno virtual
+venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+
+# PyCharm
+.idea/
+
+# Variables de entorno
+.env
