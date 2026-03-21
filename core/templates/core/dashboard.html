@@ -51,5 +51,26 @@
         </div>
     </div>
 
-</div>
+    <!-- Card Último Alumno -->
+    <div class="col-md-4">
+        <div class="card border-0 shadow-sm">
+            <div class="card-body d-flex align-items-center gap-3 p-4">
+                <div class="bg-warning bg-opacity-10 rounded-3 p-3">
+                    <i class="bi bi-person-plus-fill text-warning fs-3"></i>
+                </div>
+                <div>
+                    <div class="text-muted small">Último Registrado</div>
+                    <div class="fs-6 fw-bold">
+                        {% if ultimo_alumno %}
+                            {{ ultimo_alumno.first_name }} {{ ultimo_alumno.last_name }}
+                        {% else %}
+                            Sin registros
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>  ← este cierra el row, te faltaba
 {% endblock %}
