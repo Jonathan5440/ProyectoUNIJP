@@ -6,6 +6,7 @@ from .forms import AlumnoForm
 
 def alumno_list(request):
     query   = request.GET.get('q', '')
+    genero  = request.GET.get('genero', '')
     alumnos = Alumno.objects.all()
 
     if query:
@@ -13,9 +14,13 @@ def alumno_list(request):
                 | alumnos.filter(last_name__icontains=query)  \
                 | alumnos.filter(email__icontains=query)
 
+    if genero in ['M', 'F']:
+        alumnos = alumnos.filter(gender=genero)
+
     return render(request, 'alumno/list.html', {
         'alumnos': alumnos,
-        'query':   query
+        'query':   query,
+        'genero':  genero,
     })
 
 def alumno_detail(request, pk):
