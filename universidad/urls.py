@@ -15,4 +15,9 @@ urlpatterns = [
     # ── Reportes ──────────────────────────────────
     path('reportes/cursos/', reporte_views.reporte_cursos, name='reporte_cursos'),
     path('reportes/catedraticos/', reporte_views.reporte_catedraticos, name='reporte_catedraticos'),
+    path('reportes/cursos/excel/', reporte_views.exportar_cursos_excel, name='exportar_cursos_excel'),
+    path('reportes/catedraticos/excel/', reporte_views.exportar_catedraticos_excel, name='exportar_catedraticos_excel'),
+
+
+
 ]
