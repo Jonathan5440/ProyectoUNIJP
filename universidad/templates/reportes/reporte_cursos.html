@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %}Reporte de Cursos{% endblock %}
+{% block page_title %} Reporte de Cursos{% endblock %}
+
+{% block content %}
+<div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+        <h5 class="mb-0"><i class="bi bi-journal-bookmark-fill me-2"></i>Cursos — Alumnos y Promedio de Notas</h5>
+    </div>
+    <div class="card-body p-0">
+        <table class="table table-hover table-striped mb-0">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Curso</th>
+                    <th>Créditos</th>
+                    <th>Total Alumnos</th>
+                    <th>Promedio de Notas</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for curso in cursos %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td><strong>{{ curso.nombre }}</strong></td>
+                    <td>{{ curso.creditos }}</td>
+                    <td>
+                        <span class="badge bg-primary">{{ curso.total_alumnos }}</span>
+                    </td>
+                    <td>
+                        {% if curso.promedio_notas %}
+                            {% if curso.promedio_notas >= 75 %}
+                                <span class="badge bg-success">{{ curso.promedio_notas|floatformat:2 }}</span>
+                            {% elif curso.promedio_notas >= 61 %}
+                                <span class="badge bg-warning text-dark">{{ curso.promedio_notas|floatformat:2 }}</span>
+                            {% else %}
+                                <span class="badge bg-danger">{{ curso.promedio_notas|floatformat:2 }}</span>
+                            {% endif %}
+                        {% else %}
+                            <span class="text-muted">Sin notas</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if curso.promedio_notas >= 75 %}
+                            <span class="badge bg-success">Excelente</span>
+                        {% elif curso.promedio_notas >= 61 %}
+                            <span class="badge bg-warning text-dark">Regular</span>
+                        {% else %}
+                            <span class="badge bg-danger">Bajo</span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
