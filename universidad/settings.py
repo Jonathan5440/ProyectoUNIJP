@@ -39,13 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'universidad',
     'universidad.Models.Alumno',
     'universidad.Models.Catedratico',
     'universidad.Models.Curso',
     'universidad.Models.Asignacion_curso',
     'universidad.Models.Inscripcion_alumno',
     'universidad.Models.Notas',
-    'core'
+    'core',
 ]
 
 MIDDLEWARE = [
